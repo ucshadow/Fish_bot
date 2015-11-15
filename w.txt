@@ -1,0 +1,16 @@
+        # cursor_now = win32api.GetCursorPos()
+        # print(cursor_now)
+        while True:
+            if not self.key_down(20):
+                self.e2.config(bg='magenta')
+                time.sleep(0.3)
+                return self.key_down(20)
+
+    def key_down(self, key):
+        state = GetKeyState(key)
+        if (state == 0) or (state == 1):
+            print('up')
+            return True
+        else:
+            print('false')
+            return False
